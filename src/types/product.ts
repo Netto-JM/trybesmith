@@ -1,5 +1,6 @@
 export type Product = {
-  id?: number;
+  id: number;
   name: string;
   amount: string;
+  order_id?: number | null
 };
