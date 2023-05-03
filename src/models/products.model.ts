@@ -16,7 +16,17 @@ async function findAll(): Promise<Product[]> {
   return rows as Product[];
 }
 
+async function findById(id: number): Promise<Product | undefined> {
+  const [rows] = await connection.execute<RowDataPacket[]>(
+    'SELECT * FROM Trybesmith.products WHERE id = ?', 
+    [id],
+  );
+  const [product] = rows;
+  return product as Product | undefined;
+}
+
 export default {
   insert,
   findAll,
+  findById,
 };
