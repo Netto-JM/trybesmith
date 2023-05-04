@@ -23,7 +23,7 @@ async function getProductById(req: Request, res: Response) {
 }
 
 export default {
-  listProducts,
   createProduct,
+  listProducts,
   getProductById,
 };
