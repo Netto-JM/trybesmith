@@ -1,5 +1,4 @@
-import productRouter from './products.router';
+import productRouter from './product.router';
+import userRouter from './user.router';
 
-const temporary = {};
-
-export { productRouter, temporary };
+export { productRouter, userRouter };

@@ -1,5 +1,4 @@
 import productController from './product.controller';
+import userController from './user.controller';
 
-const temporary = {};
-
-export { productController, temporary };
+export { productController, userController };

@@ -1,5 +1,4 @@
 import productService from './product.service';
+import userService from './user.service';
 
-const temporary = {};
-
-export { productService, temporary };
+export { productService, userService };
