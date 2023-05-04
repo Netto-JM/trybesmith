@@ -12,13 +12,15 @@ async function insert(name: string, amount: string): Promise<Product> {
 }
 
 async function findAll(): Promise<Product[]> {
-  const [rows] = await connection.execute<RowDataPacket[]>('SELECT * FROM Trybesmith.products');
+  const [rows] = await connection.execute<RowDataPacket[]>(
+    'SELECT id, name, amount, order_id as orderId FROM Trybesmith.products',
+  );
   return rows as Product[];
 }
 
 async function findById(id: number): Promise<Product | undefined> {
   const [rows] = await connection.execute<RowDataPacket[]>(
-    'SELECT * FROM Trybesmith.products WHERE id = ?', 
+    'SELECT id, name, amount, order_id as orderId FROM Trybesmith.products WHERE id = ?', 
     [id],
   );
   const [product] = rows;
